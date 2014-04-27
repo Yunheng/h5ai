@@ -32,15 +32,15 @@ body#h5ai-info {
 		display: block;
 		color: #aaa;
 
-		.value {
-			margin-left: 0.5em;
-			padding: 2px 4px;
-			.border-radius(4px);
-			font-family: @font-family-mono;
-			letter-spacing: 0.1em;
-			background-color: @col-widget-back;
-			border: @border-widget;
-		}
+	}
+	code {
+		margin: 0 0.2em;
+		padding: 2px 4px;
+		border-radius: 4px;
+		font-family: @font-family-mono;
+		letter-spacing: 0.1em;
+		background-color: @col-widget-back;
+		border: @border-widget;
 	}
 	h1 {
 		font-size: 3.6em;
@@ -68,30 +68,32 @@ body#h5ai-info {
 		margin: 0;
 		padding: 0;
 
-		.test-label {
-			display: inline-block;
-			width: 300px;
-		}
-		.test-result {
-			display: inline-block;
-			width: 70px;
-			text-align: right;
-			font-weight: bold;
-			color: #aaa;
+		.test {
+			.label {
+				display: inline-block;
+				width: 350px;
+			}
+			.result {
+				display: inline-block;
+				width: 70px;
+				text-align: right;
+				font-weight: bold;
+				color: #aaa;
 
-			&.test-passed {
-				color: #5a5;
+				&.passed {
+					color: #5a5;
+				}
+				&.failed {
+					color: #a55;
+				}
 			}
-			&.test-failed {
-				color: #a55;
+			.info {
+				margin: 4px 0 12px 12px;
+				font-size: 0.7em;
+				color: #aaa;
+				width: 350px;
+				line-height: 1.2em;
 			}
-		}
-		.test-info {
-			margin: 4px 0 12px 12px;
-			font-size: 0.7em;
-			color: #aaa;
-			width: 310px;
-			line-height: 1.2em;
 		}
 	}
 

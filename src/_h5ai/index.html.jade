@@ -2,7 +2,7 @@ doctype 5
 //if lt IE 9
 	<html class="no-js no-browser" lang="en">
 //[if gt IE 8]><!
-html.no-js( lang="en" )
+html.no-js.browser( lang="en" )
 	//<![endif]
 
 	head
@@ -17,7 +17,7 @@ html.no-js( lang="en" )
 		link( rel="apple-touch-icon-precomposed", sizes="72x72", type="image/png", href="client/images/app-72x72.png" )
 		link( rel="apple-touch-icon-precomposed", sizes="114x114", type="image/png", href="client/images/app-114x114.png" )
 		link( rel="apple-touch-icon-precomposed", sizes="144x144", type="image/png", href="client/images/app-144x144.png" )
-		link( rel="stylesheet", href="//fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic|Ubuntu:400,700,400italic,700italic" )
+		link( rel="stylesheet", href="//fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic,700italic|Ubuntu:300italic,700italic,300,700" )
 		link( rel="stylesheet", href="client/css/styles.css" )
 		script( src="client/js/scripts.js", data-mode="info" )
 
@@ -28,52 +28,67 @@ html.no-js( lang="en" )
 		span.build-version version {{pkg.version}}
 		span.build-stamp {{stamp}}
 		span.idx-file Index File: 
-			span.value
+			code.value
 
-		h2 server supports
+		h2 Server Details
 		ul#tests
 			li.test.php( data-id="php" )
-				span.test-label php version
-				span.test-result ?
-				div.test-info PHP version >= 5.2.1
+				span.label PHP version
+				span.result ?
+				div.info PHP version &gt;= 5.2.1
 			li.test( data-id="cache" )
-				span.test-label cache directory
-				span.test-result ?
-				div.test-info web server has write access
+				span.label Cache directory
+				span.result ?
+				div.info Web server has write access
 			li.test( data-id="thumbs" )
-				span.test-label image thumbs
-				span.test-result ?
-				div.test-info PHP GD extension with JPEG support available
+				span.label Image thumbs
+				span.result ?
+				div.info PHP GD extension with JPEG support available
 			li.test( data-id="exif" )
-				span.test-label use exif thumbs
-				span.test-result ?
-				div.test-info PHP EXIF extension available
+				span.label Use EXIF thumbs
+				span.result ?
+				div.info PHP EXIF extension available
 			li.test( data-id="ffmpeg" )
-				span.test-label movie thumbs
-				span.test-result ?
-				div.test-info command 'ffmpeg' available
+				span.label Movie thumbs
+				span.result ?
+				div.info
+					| Command line program 
+					code ffmpeg
+					|  available
 			li.test( data-id="convert" )
-				span.test-label pdf thumbs
-				span.test-result ?
-				div.test-info command 'convert' available
+				span.label PDF thumbs
+				span.result ?
+				div.info
+					| Command line program 
+					code convert
+					|  available
 			li.test( data-id="tar" )
-				span.test-label shell tar
-				span.test-result ?
-				div.test-info command 'tar' available
+				span.label Shell tar
+				span.result ?
+				div.info
+					| Command line program 
+					code tar
+					|  available
 			li.test( data-id="zip" )
-				span.test-label shell zip
-				span.test-result ?
-				div.test-info command 'zip' available
+				span.label Shell zip
+				span.result ?
+				div.info
+					| Command line program 
+					code zip
+					|  available
 			li.test( data-id="du" )
-				span.test-label folder size
-				span.test-result ?
-				div.test-info command 'du' available
+				span.label Folder sizes
+				span.result ?
+				div.info
+					| Command line program 
+					code du
+					|  available
 
 		div#bottombar.clearfix
 			span.left
 				a#h5ai-reference( href="{{pkg.url}}", title="{{pkg.name}} · {{pkg.description}}" )
 					| {{pkg.name}} {{pkg.version}}
-				span.hideOnJs.noJsMsg
+				span.noJsMsg
 					| ⚡ JavaScript disabled! ⚡
 				span.noBrowserMsg
 					| ⚡ Unsupported browser! Works best in 
